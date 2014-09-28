@@ -11,14 +11,15 @@
 	</php>
 
 	<!-- Add any additional test suites you want to run here -->
-	<!--
+
 	<testsuites>
+	<!--
 		<testsuite name="All Tests">
 			<directory>./tests/TestCase</directory>
 		</testsuite>
+	-->
 		<!-- Add plugin test suites here. -->
 	</testsuites>
-	-->
 
 	<!-- Setup a listener for fixtures -->
 	<!--
