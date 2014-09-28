@@ -1,4 +1,4 @@
-# CakePHP Chatwork [![Build Status](https://travis-ci.org/sirone/chatwork_cakephp.svg?branch=master)](https://travis-ci.org/sirone/chatwork_cakephp)
+# CakePHP Chatwork [![Build Status](https://travis-ci.org/sirone/chatwork_cakephp.svg?branch=master)](https://travis-ci.org/sirone/chatwork_cakephp) [![Latest Stable Version](https://poser.pugx.org/sirone/chatwork_cakephp/version.svg)](https://packagist.org/packages/sirone/chatwork_cakephp)
 
 CakePHP - Chatwork Plugin は Chatwork API (2014-09-28 時点のプレビュー版) による実装です。
 
