@@ -12,12 +12,13 @@ env:
 
 install:
   - git clone git://github.com/cakephp/cakephp ../cakephp && cd ../cakephp && git checkout $CAKE_VERSION
-  - cp -R ../chatwork_cakephp plugins/Chatwork
+  - cp -R ../chatwork_cakephp Plugin/Chatwork
   - chmod -R 777 ../cakephp/app/tmp
   - sh -c "composer global require 'phpunit/phpunit=3.7.33'"
   - sh -c "ln -s ~/.composer/vendor/phpunit/phpunit/PHPUnit ../cakephp/vendors/PHPUnit"
 
 before_script:
+  - sh -c "mv ./app/Plugin/Chatwork/Config/bootstrap.php.default ./app/Plugin/Chatwork/Config/bootstrap.php"
   - sh -c "if [ '$DB' = 'mysql' ]; then mysql -e 'CREATE DATABASE cakephp_test;'; fi"
   - set +H
   - echo "<?php
