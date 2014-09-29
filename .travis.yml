@@ -18,7 +18,7 @@ install:
   - sh -c "ln -s ~/.composer/vendor/phpunit/phpunit/PHPUnit ../cakephp/vendors/PHPUnit"
 
 before_script:
-  - hs -c "ls -la && pwd"
+  - sh -c "ls -la && pwd"
   - sh -c "mv ./app/Plugin/Chatwork/Config/bootstrap.php.default ./app/Plugin/Chatwork/Config/bootstrap.php"
   - sh -c "if [ '$DB' = 'mysql' ]; then mysql -e 'CREATE DATABASE cakephp_test;'; fi"
   - set +H
