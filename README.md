@@ -16,13 +16,26 @@ master ブランチの必要環境 (The master branch has the following requirem
 
 git の場合は git submodule コマンドが便利です。 (This can be done with the git submodule command)
 ```sh
-git submodule add https://github.com/sirone/cakephp-chatwork.git app/Plugin/Chatwork
+git submodule add https://github.com/sirone/chatwork_cakephp.git app/Plugin/Chatwork
 ```
 
-* `app/Config/bootstrap.php` にて、`CakePlugin::load('Chatwork');` のようにプラグインを読み込んでください。 (Ensure the plugin is loaded in `app/Config/bootstrap.php` by calling `CakePlugin::load('Chatwork');`)
+* `app/Config/bootstrap.php` にて、`CakePlugin::load('Chatwork',array('bootstrap'=>true));` のようにプラグインを読み込んでください。
+(Ensure the plugin is loaded in `app/Config/bootstrap.php` by calling `CakePlugin::load('Chatwork',array('bootstrap'=>true));`)
 
 # ドキュメント(Documentation)
 
 ## 設定(Configuration)
+
+* Chatwork Plugins の設定ファイルの元は、`/app/Plugin/Chatwork/bootstrap.php.default` にあります。同一ディレクトリ上にこのファイルのコピーを作り、 bootstrap.php という名前にしてください。
+(A copy of ChatworkPlugin’s bootstrap file is found in /app/Plugin/Chatwork/bootstrap.default.php. Make a copy of this file in the same directory, but name it bootstrap.php.)
+
+* この設定ファイルの中身は一目瞭然です。 API_TOKEN 定数の値を自分のセットアップに合わせて変更するだけです。 例は次のようなものになるでしょう:(The config file should be pretty straightforward: just replace the values in the API_TOKEN constant with those that apply to your setup. A sample configuration constant might look something like the following:)
+
+```php
+define(__NAMESPACE__.'\API_TOKEN','X-ChatWorkToken:1s2a3m4p5l6e7h8a9h10a11');
+```
+
+この定数が `Chatwork` 名前空間に属していることに注意してください。( Please note that it belongs to the `Chatwork` namespace.. http://php.net/manual/en/language.namespaces.php)
+
 
 書きかけ (now writing... sorry)
