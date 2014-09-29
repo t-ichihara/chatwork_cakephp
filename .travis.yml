@@ -16,10 +16,10 @@ install:
   - chmod -R 777 ../cakephp/app/tmp
   - sh -c "composer global require 'phpunit/phpunit=3.7.33'"
   - sh -c "ln -s ~/.composer/vendor/phpunit/phpunit/PHPUnit ../cakephp/vendors/PHPUnit"
+  - sh -c "mv ./plugins/Chatwork/Config/bootstrap.php.default ./plugins/Chatwork/Config/bootstrap.php"
+  - echo "CakePlugin::load('Chatwork',array('bootstrap'=>true));" >> ../cakephp/app/Config/bootstrap.php
 
 before_script:
-  - sh -c "mv ./plugins/Chatwork/Config/bootstrap.php.default ./plugins/Chatwork/Config/bootstrap.php"
-  - sh -c "cat ./plugins/Chatwork/Config/bootstrap.php"
   - sh -c "if [ '$DB' = 'mysql' ]; then mysql -e 'CREATE DATABASE cakephp_test;'; fi"
   - set +H
   - echo "<?php
