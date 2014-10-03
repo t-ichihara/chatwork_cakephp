@@ -1,4 +1,4 @@
-# CakePHP Chatwork
+# CakePHP Chatwork Plugin
 
 [![Build Status](https://travis-ci.org/sirone/chatwork_cakephp.svg?branch=master)](https://travis-ci.org/sirone/chatwork_cakephp)
 [![Latest Stable Version](https://poser.pugx.org/sirone/chatwork_cakephp/v/stable.svg)](https://packagist.org/packages/sirone/chatwork_cakephp)
