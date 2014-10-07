@@ -7,6 +7,63 @@
 class ChatworkShell extends AppShell
 {
 	/**
+	 * startup() の override.
+	 * Chatwork\API_TOKEN の存在チェックを行います.
+	 * 存在しなければ app/Plugin/Chatwork/Config/bootstrap.php.default のリネームを忘れている可能性があります.
+	 */
+	public function startup()
+	{
+		parent::startup();
+		$dtype='chatwork_console';
+		if( !defined('Chatwork\API_TOKEN') )
+		{
+			if( file_exists(APP.'Plugin'.DS.'Chatwork'.DS.'Config'.DS.'bootstrap.php.default') )
+			{
+				if( !file_exists(APP.'Plugin'.DS.'Chatwork'.DS.'Config'.DS.'bootstrap.php') )
+				{
+					$this->error
+					(
+						__d($dtype,'Your bootstrap file is NOT present.'),
+						array
+						(
+							__d($dtype,'* Please a copy of ChatworkPlugin\'s bootstrap file is found in %s.','/APP/Plugin/Chatwork/bootstrap.php.default'),
+							__d($dtype,'  Make a copy of this file in the same directory, but name it %s.','bootstrap.php'),
+						)
+					);
+				}
+			}
+
+			if( file_exists(APP.'Plugin'.DS.'Chatwork'.DS.'Config'.DS.'bootstrap.php') )
+			{
+				$this->error
+				(
+					__d($dtype,'Your bootstrap file is NOT present.'),
+					array
+					(
+						__d($dtype,'* Please see this script file: \'%s\'', 'https://github.com/sirone/chatwork_cakephp/blob/master/Config/bootstrap.php.default'),
+						__d($dtype,'* A copy of ChatworkPlugin\'s bootstrap file is found in %s.','/APP/Plugin/Chatwork/bootstrap.default.php'),
+						__d($dtype,'  Make a copy of this file in the same directory, but name it %s.','bootstrap.php'),
+						__d($dtype,'* Please also check the following information.'),
+						__d($dtype,'  Ensure the plugin is loaded in app/Config/bootstrap.php by calling CakePlugin::load(\'Chatwork\',array(\'bootstrap\'=>true));'),
+					)
+				);
+			}
+		}
+
+		if( Chatwork\API_TOKEN === 'X-ChatWorkToken:CHANGE_THIS' )
+		{
+			$this->error
+			(
+				__d($dtype,'Please changed "%s" !','Chatwork\API_TOKEN'),
+				array
+				(
+					__d($dtype,'Please change the value of \'%s\' in %s to a API token value specific to your application.', 'define(__NAMESPACE__.\'\API_TOKEN\',\'X-ChatWorkToken:CHANGE_THIS\');', 'APP/Plugin/Chatwork/bootstrap.php'),
+				)
+			);
+		}
+	}
+
+	/**
 	 * getOptionParser() の override.
 	 */
 	public function getOptionParser()
