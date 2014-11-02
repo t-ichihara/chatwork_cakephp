@@ -1,5 +1,5 @@
 {
-    "name": "cakephp/chatwork_cakephp",
+    "name": "sirone/chatwork_cakephp",
     "description": "CakePHP Chatwork Plugin",
     "type": "cakephp-plugin",
     "keywords": ["cakephp", "chatwork", "plugin"],
