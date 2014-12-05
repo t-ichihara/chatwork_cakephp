@@ -171,6 +171,7 @@ class ChatworkShell extends AppShell
 						'room_id' => array
 						(
 							'help' => __d($dtype, 'チャットルーム ID.'),
+							'required' => true,
 						),
 					),
 				),
@@ -189,6 +190,7 @@ class ChatworkShell extends AppShell
 						'room_id' => array
 						(
 							'help' => __d($dtype, 'チャットルーム ID.'),
+							'required' => true,
 						),
 					),
 				),
@@ -207,6 +209,16 @@ class ChatworkShell extends AppShell
 						'room_id' => array
 						(
 							'help' => __d($dtype, 'チャットルーム ID.'),
+							'required' => true,
+						),
+						'force' => array
+						(
+							'help' => __d($dtype, '未取得にかかわらず最新の100件を取得するか. 1を指定すると未取得にかかわらず最新の100件を取得します（デフォルトは0）'),
+							'choices' => array
+							(
+								0,
+								1,
+							),
 						),
 					),
 				),
@@ -225,10 +237,12 @@ class ChatworkShell extends AppShell
 						'room_id' => array
 						(
 							'help' => __d($dtype, 'チャットルーム ID.'),
+							'required' => true,
 						),
 						'message_id' => array
 						(
 							'help' => __d($dtype, 'メッセージ ID.'),
+							'required' => true,
 						),
 					),
 				),
@@ -252,7 +266,6 @@ class ChatworkShell extends AppShell
 						'account_id' => array
 						(
 							'help' => __d($dtype, 'タスクの担当者のアカウントID.'),
-							'required' => true,
 						),
 						'assigned_by account_id' => array
 						(
@@ -313,7 +326,6 @@ class ChatworkShell extends AppShell
 						'account_id' => array
 						(
 							'help' => __d($dtype, 'アップロードしたユーザーのアカウントID.'),
-							'required' => true,
 						),
 					),
 				),
@@ -364,16 +376,16 @@ class ChatworkShell extends AppShell
 					(
 						'name' => array
 						(
-							'required' => true,
 							'help' => __d($dtype, '作成したいグループチャットのチャット名.'),
+							'required' => true,
 						),
 						'members_admin_ids' => array
 						(
-							'required' => true,
 							'help' => __d($dtype, '管理者権限のユーザー.'.PHP_EOL.
 								'作成したチャットに参加メンバーのうち、管理者権限にしたいユーザーのアカウントIDの配列.'.PHP_EOL.
 								'最低1人は指定する必要がある.'.PHP_EOL.
 								'※リストはカンマ区切りで複数の値を指定してください.'),
+							'required' => true,
 						),
 						'members_member_ids' => array
 						(
@@ -436,8 +448,8 @@ class ChatworkShell extends AppShell
 						),
 						'body' => array
 						(
-							'required' => true,
 							'help' => __d($dtype, 'メッセージ本文.'),
+							'required' => true,
 						),
 					),
 				),
@@ -460,14 +472,14 @@ class ChatworkShell extends AppShell
 						),
 						'body' => array
 						(
-							'required' => true,
 							'help' => __d($dtype, 'タスクの内容.'),
+							'required' => true,
 						),
 						'to_ids' => array
 						(
-							'required' => true,
 							'help' => __d($dtype, '担当者のアカウントIDをカンマ区切りで.'.PHP_EOL.
 								'※リストはカンマ区切りで複数の値を指定してください.'),
+							'required' => true,
 						),
 						'limit' => array
 						(
@@ -540,16 +552,16 @@ class ChatworkShell extends AppShell
 					(
 						'room_id' => array
 						(
-							'required' => true,
 							'help' => __d($dtype, 'チャットルーム ID.'),
+							'required' => true,
 						),
 						'members_admin_ids' => array
 						(
-							'required' => true,
 							'help' => __d($dtype, '管理者権限のユーザー.'.PHP_EOL.
 								'作成したチャットに参加メンバーのうち、管理者権限にしたいユーザーのアカウントIDの配列.'.PHP_EOL.
 								'最低1人は指定する必要がある.'.PHP_EOL.
 								'※リストはカンマ区切りで複数の値を指定してください.'),
+							'required' => true,
 						),
 						'members_member_ids' => array
 						(
@@ -579,16 +591,16 @@ class ChatworkShell extends AppShell
 					(
 						'room_id' => array
 						(
-							'required' => true,
 							'help' => __d($dtype, 'チャットルーム ID.'),
+							'required' => true,
 						),
 						'action_type' => array
 						(
-							'required' => true,
 							'help' => __d($dtype, '退席するか、削除するか.'.PHP_EOL.
 								'退席すると、このグループチャットにある自分が担当のタスク、および自分が送信したファイルは削除されます.'.PHP_EOL.
 								'削除すると、このグループチャットに参加しているメンバー全員のメッセージ、タスク、ファイルはすべて削除されます.'.PHP_EOL.
 								'※一度削除すると元に戻せません！'),
+							'required' => true,
 							'choices' => array
 							(
 								'leave',
