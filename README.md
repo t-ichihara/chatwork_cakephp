@@ -4,7 +4,7 @@
 [![Latest Stable Version](https://poser.pugx.org/sirone/chatwork_cakephp/v/stable.svg)](https://packagist.org/packages/sirone/chatwork_cakephp)
 [![License](https://poser.pugx.org/sirone/chatwork_cakephp/license.svg)](https://packagist.org/packages/sirone/chatwork_cakephp)
 
-CakePHP - Chatwork Plugin は Chatwork API (2014-09-28 時点のプレビュー版) による実装です。
+CakePHP - Chatwork Plugin は Chatwork API (2014-12-05 時点のプレビュー版) による実装です。
 
 ## 本家 (Official)
 
